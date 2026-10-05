@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="it">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Contatore</title>
+<style>
+  body { font-family: system-ui, sans-serif; display: grid; place-items: center; min-height: 100vh; margin: 0; background: #f4f4f5; color: #18181b; }
+  main { text-align: center; }
+  #count { font-size: 6rem; font-weight: 700; margin: 1rem 0; }
+  button { font-size: 1.5rem; padding: .5rem 1.2rem; margin: 0 .3rem; border: 0; border-radius: .5rem; background: #18181b; color: #fff; cursor: pointer; }
+  button:hover { background: #3f3f46; }
+</style>
+</head>
+<body>
+<main>
+  <h1>Contatore</h1>
+  <div id="count">0</div>
+  <button id="dec" aria-label="Diminuisci">−</button>
+  <button id="reset">Reset</button>
+  <button id="inc" aria-label="Aumenta">+</button>
+</main>
+<script>
+  let n = 0;
+  const el = document.getElementById('count');
+  const set = v => { n = v; el.textContent = n; };
+  document.getElementById('inc').onclick = () => set(n + 1);
+  document.getElementById('dec').onclick = () => set(n - 1);
+  document.getElementById('reset').onclick = () => set(0);
+</script>
+</body>
+</html>
